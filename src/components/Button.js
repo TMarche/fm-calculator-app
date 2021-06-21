@@ -26,7 +26,7 @@ const StyledButton = styled.button`
 
 class Button extends React.Component {
     render() {
-        return <StyledButton onClick={this.onClick}>{this.props.value}</StyledButton>
+        return <StyledButton onClick={this.props.onClick}>{this.props.value}</StyledButton>
     }
 
     onClick = () => {
