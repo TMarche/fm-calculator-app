@@ -1,16 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
-const App = () => {
-    return (
-    <div>
-        Test
-       <div class="attribution">
-         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-         Coded by <a href="#">Your Name Here</a>.
-       </div>
-    </div>)
-}
+import App from './components/App'
 
 ReactDOM.render(
     <App />,

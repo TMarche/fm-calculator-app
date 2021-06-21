@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Custom properties -- update these for your own design */
+
+:root {
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    /* Theme 1 */
+    --clr-very-dark-desaturated-blue-main: hsl(222, 26%, 31%);
+    --clr-very-dark-desaturated-blue-toggle: hsl(223, 31%, 20%);
+    --clr-very-dark-desaturated-blue-screen: hsl(224, 36%, 15%);
+    --clr-dark-desaturated-blue-key-background:  hsl(225, 21%, 49%);
+    --clr-dark-desaturated-blue-key-shadow:  hsl(224, 28%, 35%);
+    --clr-red: hsl(6, 63%, 50%);
+    --clr-dark-red: hsl(6, 70%, 34%);
+    --clr-light-grayish-orange: hsl(30, 25%, 89%);
+    --clr-grayish-orange: hsl(28, 16%, 65%);
+    --clr-very-dark-grayish-blue: hsl(221, 14%, 31%);
+    --clr-white: hsl(0, 0, 100%);
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+
