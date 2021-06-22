@@ -27,7 +27,9 @@ class App extends React.Component {
             this.handleClickedDelete();
         } else if (this.state.lastClicked.toLowerCase() === "reset") {
             this.handleClickedReset();
-        } if (!isNaN(this.state.lastClicked)) {
+        } else if (this.state.lastClicked.toLowerCase() === '=') {
+            this.handleClickedEquals();
+        } else if (!isNaN(this.state.lastClicked)) {
             this.handleClickedNumber();
         }
     }
@@ -49,7 +51,25 @@ class App extends React.Component {
             }
         })
     }
-
+    
+    handleClickedEquals = () => {
+        try {
+            const newValue = math.evaluate(this.state.currentValue.slice(0, -1))
+            this.setState( (state) => {
+                return {
+                    currentValue: math.evaluate(this.state.currentValue.slice(0, -1)),
+                    shouldHandleUpdate: false,
+                }
+            })
+        } catch (error) {
+            this.setState( (state) => {
+                return {
+                    currentValue: "err",
+                    shouldHandleUpdate: false,
+                }
+            })            
+        }
+    }
     handleClickedNumber = () => {
         this.setState({
             shouldHandleUpdate: false,
