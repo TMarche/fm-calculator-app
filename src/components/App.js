@@ -92,7 +92,8 @@ class App extends React.Component {
     
     handleClickedEquals = () => {
         try {
-            const newValue = math.evaluate(this.state.currentValue.slice(0, -1))
+            let newValue = math.evaluate(this.state.currentValue.slice(0, -1))
+            if (!newValue) {newValue = ""}
             this.setState( (state) => {
                 return {
                     currentValue: newValue.toString(),
@@ -150,12 +151,15 @@ class App extends React.Component {
     
 
     handleButtonClick = (value) => {
+        // Enable value conversion if necessary
+        let updatedValue = value;
+        if (value === "x") {updatedValue = "*"}
         return () => {
             this.setState( (state) => {
                 return {
-                    commandHistory: state.commandHistory + value,
-                    currentValue: state.currentValue + value,
-                    lastClicked: value,
+                    commandHistory: state.commandHistory + updatedValue,
+                    currentValue: state.currentValue + updatedValue,
+                    lastClicked: updatedValue,
                     shouldHandleUpdate: true,
                 }
             })
